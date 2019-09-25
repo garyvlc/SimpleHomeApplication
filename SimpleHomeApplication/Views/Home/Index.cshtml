@@ -2,14 +2,102 @@
 <html>
 <head>
     <title>Simple Home Application</title>
-    <link rel=¨stylesheet¨ type=¨text/css¨ href=¨~/Content/MainPage.css¨>
-</head>
-<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/MainPage.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="~/Scripts/MainPage.js"></script>
-    @*Pen information - scattering hexagons Design by K-T (https://codepen.io/K-T/pen/OJLxzVq)*@
-    <div id="jsi-hex-container" class="container">
+</head>
+<body>
+    <div class="container">
+        <h2>Simple Home Application</h2>
+        <form>
+            <div class="form-group">
+                <label for="ElectricStartMeter">Starting Electric Meter Readings(kWh):</label>
+                <input type="text" class="form-control" id="ElectricStartMeter" name="ElectricStartMeter">
+            </div>
+            <div class="form-group">
+                <label for="ElectricCurrentMeter">Current Electric Meter Readings(kWh):</label>
+                <input type="text" class="form-control" id="ElectricCurrentMeter" name="ElectricCurrentMeter">
+            </div>
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#ElectricCollapse">Electric</a>
+                        </h4>
+                    </div>
+                    <div id="ElectricCollapse" class="panel-collapse collapse">
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3">Usage</div>
+                            <div class="col-sm-3">Rate($/Unit)</div>
+                            <div class="col-sm-3">Amount($)</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">Electricity Charges</div>
+                            <div class="col-sm-3" id="electricUsage"></div>
+                            <div class="col-sm-3" id="electricRate">0.16520</div>
+                            <div class="col-sm-3" id="electricAmount"></div>
+                        </div>
+                        <hr />
+                        <div class="totals">
+                            <div class="totals-item">
+                                <label>Total Charges</label>
+                                <div class="totals-value" id="cart-subtotal">0.00</div>
+                            </div>
+                            <div class="totals-item">
+                                <label>GST (7%)</label>
+                                <div class="totals-value" id="cart-tax">0.00</div>
+                            </div>
+                            <div class="totals-item totals-item-total">
+                                <label>Grand Total</label>
+                                <div class="totals-value" id="cart-total">0.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="WaterStartMeter">Starting Water Meter Readings(cu m):</label>
+                <input type="text" class="form-control" id="WaterStartMeter" name="WaterStartMeter">
+            </div>
+            <div class="form-group">
+                <label for="WaterCurrentMeter">Current Water Meter Readings(cu m):</label>
+                <input type="text" class="form-control" id="WaterCurrentMeter" name="WaterCurrentMeter">
+            </div>
 
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" href="#WaterCollapse">Water</a>
+                        </h4>
+                    </div>
+                    <div id="WaterCollapse" class="panel-collapse collapse">
+                        <div id="eleBox">Test2</div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="shopping-cart">
+            <div class="totals">
+                <div class="totals-item">
+                    <label>Subtotal</label>
+                    <div class="totals-value" id="cart-subtotal">0.00</div>
+                </div>
+                <div class="totals-item">
+                    <label>Tax (7%)</label>
+                    <div class="totals-value" id="cart-tax">0.00</div>
+                </div>
+                <div class="totals-item totals-item-total">
+                    <label>Grand Total</label>
+                    <div class="totals-value" id="cart-total">0.00</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
